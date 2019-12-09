@@ -1,8 +1,4 @@
 package com.nesposi3;
-
-import com.nesposi3.Utils.CacheUtils;
-import com.nesposi3.Utils.SimilarityUtils;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -112,7 +108,7 @@ public class GraphNode implements Comparable<GraphNode>{
         return this.prev;
     }
     public void writeToDisk() throws IOException {
-        File f = new File("storage/graph/" + url);
+        File f = new File(GRAPH_DIRECTORY + url);
         if(f.exists()){
             f.delete();
         }
@@ -123,7 +119,7 @@ public class GraphNode implements Comparable<GraphNode>{
         x.close();
     }
     public static GraphNode getNodeFromDisk(String fileName, boolean isMedioid) throws IOException {
-        File f = new File("storage/graph/"+ fileName);
+        File f = new File(GRAPH_DIRECTORY+ fileName);
         if(!f.exists()){
             System.out.println("no");
             return null;

@@ -1,11 +1,8 @@
 package com.nesposi3;
 
-import com.nesposi3.Utils.BTreeUtils;
 import com.nesposi3.Utils.CacheUtils;
 
-import javax.imageio.IIOException;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -98,6 +95,7 @@ public class Cluster {
             RandomAccessFile x = new RandomAccessFile(f,"rw");
             x.seek(0);
             x.write(this.toBytes());
+            x.close();
         }catch (IOException ioe){
             ioe.printStackTrace();
         }

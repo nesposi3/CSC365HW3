@@ -74,6 +74,7 @@ public class BTree {
         RandomAccessFile btreeFile = new RandomAccessFile(f, "rw");
         btreeFile.seek(address);
         btreeFile.write(nodeBytes);
+        btreeFile.close();
     }
 
     public BTree(String fileName) throws IOException {
@@ -107,6 +108,7 @@ public class BTree {
         try {
             File f = new File(this.fileName);
             RandomAccessFile rFile = new RandomAccessFile(f, "r");
+            rFile.close();
             return rFile.length();
         } catch (FileNotFoundException fnf) {
             return 0L;

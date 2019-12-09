@@ -1,7 +1,6 @@
 package com.nesposi3.Utils;
 
 import com.nesposi3.GraphNode;
-import com.nesposi3.Node;
 
 public class NodePriorityQueue {
     private final int INITIAL_SIZE = 16;

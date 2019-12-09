@@ -65,6 +65,7 @@ public class CacheUtils {
                 }
             }
         }
+        file.close();
     }
     public static void initializeGraph() throws IOException, ParseException{
         File dir = new File("storage/html");
